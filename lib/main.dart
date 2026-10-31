@@ -457,24 +457,18 @@ class KategoriTab extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                width: 48,
-                height: 48,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.25),
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(14),
+              // Gambar kategori mengisi seluruh ruang kosong di atas teks
+              Expanded(
+                child: Center(
                   child: Image.asset(
                     c.imagePath,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => Icon(c.icon, color: Colors.white, size: 26),
+                    fit: BoxFit.contain,
+                    errorBuilder: (_, __, ___) => Icon(c.icon, color: Colors.white, size: 72),
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
